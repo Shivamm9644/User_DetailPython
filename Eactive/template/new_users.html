@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New User</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center alert alert-danger">Python Flask CRUD Application</h1>
+        <div class="row">
+            <div class="col-sm-2"></div>
+        </div>
+        <h2>Add New User <button class="btn btn-primary float-right" data-toggle="modal" data-target="#myModal">Add New Users</button></h2>
+        <form method="POST" action="{{ url_for('new_user') }}">
+            <label for="name">Name:</label>
+            <input type="text" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" required><br>
+
+            <label for="role">Role:</label>
+            <input type="text" name="role" required><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

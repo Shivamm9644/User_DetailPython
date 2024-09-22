@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <h1 class="text-center alert alert-danger">Python Flask CRUD Application</h1>
+                <div class="row">
+                    <div class="col-sm-2"></div>
+<h1>Users List</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Details</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td><a href="{{ url_for('user_details', id=user.id) }}">View</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="{{ url_for('new_user') }}">Add New User</a>
+</body>
+</html>
